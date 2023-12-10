@@ -1,0 +1,56 @@
+{
+    "name": "InputController",
+    "maps": [
+        {
+            "name": "Character",
+            "id": "77614437-760c-4284-8d09-2284f489b14c",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "Button",
+                    "id": "ce0ad53b-c79c-4451-9201-c0d400e89d8e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a5a4cd3b-ab24-4b75-bcda-011a2d74f0a7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0ecaf9cb-06a2-4e70-a7f3-7f6af3cef681",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4df062c6-c38c-46c2-9bce-0b4e40ac4356",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
