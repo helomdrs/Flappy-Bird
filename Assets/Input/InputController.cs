@@ -25,49 +25,60 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Character"",
-            ""id"": ""77614437-760c-4284-8d09-2284f489b14c"",
+            ""id"": ""c3de4bfe-d4c0-4674-900b-90872f06ce7f"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""FlyUp"",
                     ""type"": ""Button"",
-                    ""id"": ""ce0ad53b-c79c-4451-9201-c0d400e89d8e"",
+                    ""id"": ""e0f1251b-88e0-48fc-8d3c-0fd114a5c4f2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Tap"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""a5a4cd3b-ab24-4b75-bcda-011a2d74f0a7"",
+                    ""id"": ""4dd92801-2f3f-41dd-9825-2113fa4e086a"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""FlyUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0ecaf9cb-06a2-4e70-a7f3-7f6af3cef681"",
+                    ""id"": ""4b66954d-9d5f-4539-b0fe-4c095cdd9a61"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FlyUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b2397c5-6a38-4482-b3e3-daee9c654d52"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""FlyUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4df062c6-c38c-46c2-9bce-0b4e40ac4356"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""id"": ""b12318fe-0a84-4201-8d40-f2ad7425f671"",
+                    ""path"": ""<Touchscreen>/Press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""FlyUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -78,7 +89,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
 }");
         // Character
         m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
-        m_Character_Movement = m_Character.FindAction("Movement", throwIfNotFound: true);
+        m_Character_FlyUp = m_Character.FindAction("FlyUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -140,12 +151,12 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     // Character
     private readonly InputActionMap m_Character;
     private List<ICharacterActions> m_CharacterActionsCallbackInterfaces = new List<ICharacterActions>();
-    private readonly InputAction m_Character_Movement;
+    private readonly InputAction m_Character_FlyUp;
     public struct CharacterActions
     {
         private @InputController m_Wrapper;
         public CharacterActions(@InputController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Character_Movement;
+        public InputAction @FlyUp => m_Wrapper.m_Character_FlyUp;
         public InputActionMap Get() { return m_Wrapper.m_Character; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -155,16 +166,16 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_CharacterActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_CharacterActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
+            @FlyUp.started += instance.OnFlyUp;
+            @FlyUp.performed += instance.OnFlyUp;
+            @FlyUp.canceled += instance.OnFlyUp;
         }
 
         private void UnregisterCallbacks(ICharacterActions instance)
         {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
+            @FlyUp.started -= instance.OnFlyUp;
+            @FlyUp.performed -= instance.OnFlyUp;
+            @FlyUp.canceled -= instance.OnFlyUp;
         }
 
         public void RemoveCallbacks(ICharacterActions instance)
@@ -184,6 +195,6 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     public CharacterActions @Character => new CharacterActions(this);
     public interface ICharacterActions
     {
-        void OnMovement(InputAction.CallbackContext context);
+        void OnFlyUp(InputAction.CallbackContext context);
     }
 }
