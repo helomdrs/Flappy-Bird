@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ScenesLoader : MonoBehaviour
 {
+    const string START_SCENE_NAME = "StartScene";
+    const string GAME_SCENE_NAME = "GameScene";
+
     public void LoadStartScene()
     {
-        SceneManager.LoadScene("StartScene", LoadSceneMode.Single);
+        SceneManager.LoadScene(START_SCENE_NAME, LoadSceneMode.Single);
     }
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        SceneManager.LoadScene(GAME_SCENE_NAME, LoadSceneMode.Single);
     }
 }
