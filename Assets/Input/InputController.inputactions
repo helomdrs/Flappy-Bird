@@ -1,0 +1,67 @@
+{
+    "name": "InputController",
+    "maps": [
+        {
+            "name": "Character",
+            "id": "c3de4bfe-d4c0-4674-900b-90872f06ce7f",
+            "actions": [
+                {
+                    "name": "FlyUp",
+                    "type": "Button",
+                    "id": "e0f1251b-88e0-48fc-8d3c-0fd114a5c4f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4dd92801-2f3f-41dd-9825-2113fa4e086a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b66954d-9d5f-4539-b0fe-4c095cdd9a61",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b2397c5-6a38-4482-b3e3-daee9c654d52",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b12318fe-0a84-4201-8d40-f2ad7425f671",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
