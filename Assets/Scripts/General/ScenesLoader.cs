@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ScenesLoader : MonoBehaviour
 {
-    const string START_SCENE_NAME = "StartScene";
-    const string GAME_SCENE_NAME = "GameScene";
+    private const string START_SCENE_NAME = "StartScene";
+    private const string GAME_SCENE_NAME = "GameScene";
 
     public void LoadStartScene()
     {

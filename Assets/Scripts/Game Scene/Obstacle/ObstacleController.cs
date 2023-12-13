@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -10,18 +7,19 @@ public class ObstacleController : MonoBehaviour
     public static ObstacleController Instance {get; private set;}
 
     [Header("Pooling configs")]
-    [SerializeField] Obstacle obstaclePrefab;
-    [SerializeField] int obstacleQuantity;
-    [SerializeField] float baseFrequency;
-    [SerializeField] int difficultyChosen; //For testing, won't be needed after game cycle management
+    [SerializeField] private Obstacle obstaclePrefab;
+    [SerializeField] private int obstacleQuantity;
+    [SerializeField] private float baseFrequency;
+    [SerializeField] private int difficultyChosen; //For testing, won't be needed after game cycle management
     
-    ObjectPool<Obstacle> obstaclePool;
-    Coroutine spawnObstacleCo;
+    private ObjectPool<Obstacle> obstaclePool;
+    private Coroutine spawnObstacleCo;
 
-    bool isActive = false;
+    private bool isActive = false;
 
-    void Awake()
+    private void Awake()
     {
+        //Singleton setup
         if (Instance != null && Instance != this) { Destroy(this); } else { Instance = this; } 
         
         // Creation of ObjectPool
@@ -34,15 +32,15 @@ public class ObstacleController : MonoBehaviour
     }
 
     //For testing, won't be needed after game cycle management
-    void Start() { ManageObstacleSystem(true, difficultyChosen); }
+    private void Start() { ManageObstacleSystem(true, difficultyChosen); }
 
-    void OnGetObstacle(Obstacle obstacle)
+    private void OnGetObstacle(Obstacle obstacle)
     {
         obstacle.gameObject.SetActive(true);
         obstacle.SetPosition();
     }
 
-    void OnReleaseObstacle(Obstacle obstacle)
+    private void OnReleaseObstacle(Obstacle obstacle)
     {
         obstacle.gameObject.SetActive(false);
     }
@@ -62,12 +60,12 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
-    void ReleaseObstacleCallback(Obstacle obstacle)
+    private void ReleaseObstacleCallback(Obstacle obstacle)
     {
         obstaclePool.Release(obstacle);
     }
 
-    IEnumerator SpawnObstacleCo(int difficultyChosen, float matchSpawnFrequency)
+    private IEnumerator SpawnObstacleCo(int difficultyChosen, float matchSpawnFrequency)
     {
         while(isActive)
         {

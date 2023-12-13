@@ -1,20 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] float flyVelocity = 5f;
+    [SerializeField] private float flyVelocity = 5f;
 
-    const string FLEW_ANIMATION_TRIGGER = "Flew";
+    private const string FLEW_ANIMATION_TRIGGER = "Flew";
 
-    Rigidbody2D rb;
-    Animator animator;
+    private Rigidbody2D rb;
+    private Animator animator;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();      
@@ -29,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
         } 
     }
 
-    void Fly()
+    private void Fly()
     {
         rb.velocity = Vector2.up * flyVelocity;
         SoundController.Instance.PlayFlySFX();

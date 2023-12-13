@@ -1,32 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
     [Header("Audio Sourcers")] 
-    [SerializeField] AudioSource sfxSource;
-    [SerializeField] AudioSource soundtrackSource;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource soundtrackSource;
 
     [Header("Audio Clips")] 
-    [SerializeField] AudioClip flySfx;
-    [SerializeField] AudioClip deathSfx;
-    [SerializeField] AudioClip soundtrack;
+    [SerializeField] private AudioClip flySfx;
+    [SerializeField] private AudioClip deathSfx;
+    [SerializeField] private AudioClip soundtrack;
 
     //Making this a Singleton for now, idk if a Interface is necessary/a good practice
     public static SoundController Instance { get; private set; }
 
-    void Awake() 
+    private void Awake() 
     { 
-        // If there is an instance, and it's not me, delete myself.
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        else 
-        { 
-            Instance = this; 
-        } 
+        // Singleton setup
+        if (Instance != null && Instance != this) { Destroy(this); } else { Instance = this; } 
     }
 
     public void PlayFlySFX()

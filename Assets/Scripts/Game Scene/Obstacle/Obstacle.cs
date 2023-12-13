@@ -1,20 +1,18 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] List<float> heightValues = new List<float>();
-    [SerializeField] float baseSpeed;
+    [SerializeField] private List<float> heightValues = new List<float>();
+    [SerializeField] private float baseSpeed;
 
-    Action<Obstacle> releaseCallback;
+    private Action<Obstacle> releaseCallback;
 
-    const int X_BORDER_POSITION = 4; //Both x edges position is 4 (4 for spawning and -4 for finished position)
+    private const int X_BORDER_POSITION = 4; //Both x edges position is 4 (4 for spawning and -4 for finished position)
 
-    bool isActive = false;
-    float obstacleSpeed;
+    private bool isActive = false;
+    private float obstacleSpeed;
 
     public void SetPosition()
     {
@@ -29,7 +27,7 @@ public class Obstacle : MonoBehaviour
         isActive = true;
     }
 
-    void Update()
+    private void Update()
     {
         if(isActive)
         {
@@ -38,7 +36,7 @@ public class Obstacle : MonoBehaviour
         }
     }
 
-    void DisableObstacle()
+    private void DisableObstacle()
     {
         isActive = false;
         releaseCallback?.Invoke(this);
