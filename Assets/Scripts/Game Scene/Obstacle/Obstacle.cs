@@ -12,7 +12,7 @@ public class Obstacle : MonoBehaviour
     Action<Obstacle> releaseCallback;
     readonly System.Random random = new(); //idk why VSC forced me to use System.Random instead of UnityEngine.Random
 
-    const int X_BORDER_POSITION = 4;
+    const int X_BORDER_POSITION = 4; //Both x edges position is 4 (4 for spawning and -4 for finished position)
 
     bool isActive = false;
     float obstacleSpeed;
