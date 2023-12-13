@@ -10,7 +10,6 @@ public class Obstacle : MonoBehaviour
     [SerializeField] float baseSpeed;
 
     Action<Obstacle> releaseCallback;
-    readonly System.Random random = new(); //idk why VSC forced me to use System.Random instead of UnityEngine.Random
 
     const int X_BORDER_POSITION = 4; //Both x edges position is 4 (4 for spawning and -4 for finished position)
 
@@ -19,7 +18,7 @@ public class Obstacle : MonoBehaviour
 
     public void SetPosition()
     {
-        float randomHeight = heightValues[random.Next(heightValues.Count)]; 
+        float randomHeight = heightValues[UnityEngine.Random.Range(0, heightValues.Count)]; 
         transform.position = new Vector2(X_BORDER_POSITION, randomHeight);
     }
 
@@ -42,6 +41,6 @@ public class Obstacle : MonoBehaviour
     void DisableObstacle()
     {
         isActive = false;
-        releaseCallback.Invoke(this);
+        releaseCallback?.Invoke(this);
     }
 }

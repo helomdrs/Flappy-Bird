@@ -62,12 +62,17 @@ public class ObstacleController : MonoBehaviour
         }
     }
 
+    void ReleaseObstacleCallback(Obstacle obstacle)
+    {
+        obstaclePool.Release(obstacle);
+    }
+
     IEnumerator SpawnObstacleCo(int difficultyChosen, float matchSpawnFrequency)
     {
         while(isActive)
         {
             Obstacle obstacle = obstaclePool.Get();
-            obstacle.InitiateMovement(difficultyChosen, (Obstacle _obstacle) => obstaclePool.Release(_obstacle));
+            obstacle.InitiateMovement(difficultyChosen, ReleaseObstacleCallback);
             yield return new WaitForSeconds(matchSpawnFrequency);
         }
     }
