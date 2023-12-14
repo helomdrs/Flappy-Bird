@@ -6,7 +6,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float flyVelocity = 5f;
 
     private const string FLEW_ANIMATION_TRIGGER = "Flew";
-
+    
     private Rigidbody2D rb;
     private Animator animator;
 

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -14,6 +15,7 @@ public class ObstacleController : MonoBehaviour
     
     private ObjectPool<Obstacle> obstaclePool;
     private Coroutine spawnObstacleCo;
+    private List<Obstacle> activatedObstacles = new List<Obstacle>();
 
     private bool isActive = false;
 
@@ -32,31 +34,36 @@ public class ObstacleController : MonoBehaviour
     }
 
     //For testing, won't be needed after game cycle management
-    private void Start() { ManageObstacleSystem(true, difficultyChosen); }
+    private void Start() { ActivateObstacleSystem(difficultyChosen); }
 
     private void OnGetObstacle(Obstacle obstacle)
     {
         obstacle.gameObject.SetActive(true);
         obstacle.SetPosition();
+        activatedObstacles.Add(obstacle);
     }
 
     private void OnReleaseObstacle(Obstacle obstacle)
     {
         obstacle.gameObject.SetActive(false);
+        activatedObstacles.Remove(obstacle);
     }
 
-    // turn this into an event when doing game cycle management
-    public void ManageObstacleSystem(bool toActivate, int difficultyChosen)
+    public void ActivateObstacleSystem(int difficultyChosen)
     {
-        isActive = toActivate;
-        if(isActive == true)
+        isActive = true;
+        float matchSpawnFrequency = baseFrequency / difficultyChosen;
+        spawnObstacleCo = StartCoroutine(SpawnObstacleCo(difficultyChosen, matchSpawnFrequency));
+    }
+
+    public void DisableObstacleSystem()
+    {
+        isActive = false;
+        StopCoroutine(spawnObstacleCo);
+        
+        foreach(Obstacle obstacle in activatedObstacles)
         {
-            float matchSpawnFrequency = baseFrequency / difficultyChosen;
-            spawnObstacleCo = StartCoroutine(SpawnObstacleCo(difficultyChosen, matchSpawnFrequency));
-        } 
-        else 
-        {
-            StopCoroutine(spawnObstacleCo);
+            obstacle.StopMovement();
         }
     }
 
