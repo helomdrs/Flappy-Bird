@@ -27,6 +27,11 @@ public class Obstacle : MonoBehaviour
         isActive = true;
     }
 
+    public void StopMovement()
+    {
+        isActive = false;
+    }
+
     private void Update()
     {
         if(isActive)
