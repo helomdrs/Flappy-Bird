@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class DifficultyHolder : MonoBehaviour
+public class GameDataHolder : MonoBehaviour
 {
-    public static DifficultyHolder instance;
+    public static GameDataHolder instance;
 
     //Diffulcty index: 1 - Easy / 2 - Normal / 3 - Hard
     [SerializeField] private int difficultyChosen = 2;
+
+    private int highScore = 0;
 
     private void Awake()
     {
@@ -16,4 +18,7 @@ public class DifficultyHolder : MonoBehaviour
 
     public void SetDifficulty(int difficulty) { difficultyChosen = difficulty; }
     public int GetDifficultyChosen() { return difficultyChosen; }
+
+    public void SetHighscore(int newHighscore) { highScore = newHighscore; }
+    public int GetHighscore() { return highScore; }
 }
