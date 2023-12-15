@@ -11,11 +11,10 @@ public class ObstacleController : MonoBehaviour
     [SerializeField] private Obstacle obstaclePrefab;
     [SerializeField] private int obstacleQuantity;
     [SerializeField] private float baseFrequency;
-    [SerializeField] private int difficultyChosen; //For testing, won't be needed after game cycle management
     
+    private List<Obstacle> activatedObstacles = new List<Obstacle>();
     private ObjectPool<Obstacle> obstaclePool;
     private Coroutine spawnObstacleCo;
-    private List<Obstacle> activatedObstacles = new List<Obstacle>();
 
     private bool isActive = false;
 
@@ -32,9 +31,6 @@ public class ObstacleController : MonoBehaviour
             defaultCapacity: obstacleQuantity
         );
     }
-
-    //For testing, won't be needed after game cycle management
-    private void Start() { ActivateObstacleSystem(difficultyChosen); }
 
     private void OnGetObstacle(Obstacle obstacle)
     {

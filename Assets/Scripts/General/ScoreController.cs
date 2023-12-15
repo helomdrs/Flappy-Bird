@@ -12,10 +12,6 @@ public class ScoreController : MonoBehaviour
     private int score = 0;
     private bool isCounting = false;
 
-    //This is just for testing
-    void Start(){ StartCountingScore(2); }
-
-    //Connect this to gamecycle management latter
     public void StartCountingScore(int difficultyChosen)
     {
         score = 0;

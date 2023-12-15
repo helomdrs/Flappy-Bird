@@ -210,7 +210,8 @@ GameObject:
   m_Component:
   - component: {fileID: 235248161}
   - component: {fileID: 235248160}
-  - component: {fileID: 235248159}
+  - component: {fileID: 235248163}
+  - component: {fileID: 235248162}
   m_Layer: 0
   m_Name: ScoreController
   m_TagString: Untagged
@@ -218,34 +219,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &235248159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235248158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e8947885924644e9b5481fb72a331b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 81f3279857b1a8040bc9c2b4dd96fed0, type: 2}
-  onEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 235248160}
-        m_TargetAssemblyTypeName: ScoreController, Assembly-CSharp
-        m_MethodName: StopCountingScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &235248160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +247,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &235248162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235248158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d3f07322710304db69d0033dfd4d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: bd5d2f94d0dbf4d4cb5bf977db29f733, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 235248160}
+        m_TargetAssemblyTypeName: ScoreController, Assembly-CSharp
+        m_MethodName: StopCountingScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &235248163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235248158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d3f07322710304db69d0033dfd4d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e08b1df56838e7f4b970cf1e31896a2a, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 235248160}
+        m_TargetAssemblyTypeName: ScoreController, Assembly-CSharp
+        m_MethodName: StartCountingScore
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &257501639
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +790,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &532966978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532966980}
+  - component: {fileID: 532966979}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &532966979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532966978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4640e4db485e343b24c76cde36d412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onMatchStart: {fileID: 11400000, guid: e08b1df56838e7f4b970cf1e31896a2a, type: 2}
+--- !u!4 &532966980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532966978}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.26, y: 5.24, z: 0.62948567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618446509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797676588}
   - component: {fileID: 1797676587}
+  - component: {fileID: 1797676590}
   - component: {fileID: 1797676589}
   m_Layer: 0
   m_Name: ObstacleController
@@ -1174,7 +1249,6 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 4949108122826199849, guid: 7e46249e1b6e11a418c15c70af3e7be2, type: 3}
   obstacleQuantity: 5
   baseFrequency: 4
-  difficultyChosen: 3
 --- !u!4 &1797676588
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,17 +1273,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797676586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e8947885924644e9b5481fb72a331b, type: 3}
+  m_Script: {fileID: 11500000, guid: 73d3f07322710304db69d0033dfd4d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 81f3279857b1a8040bc9c2b4dd96fed0, type: 2}
-  onEventTriggered:
+  gameEvent: {fileID: 11400000, guid: bd5d2f94d0dbf4d4cb5bf977db29f733, type: 2}
+  unityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1797676587}
         m_TargetAssemblyTypeName: ObstacleController, Assembly-CSharp
         m_MethodName: DisableObstacleSystem
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1797676590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797676586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d3f07322710304db69d0033dfd4d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e08b1df56838e7f4b970cf1e31896a2a, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1797676587}
+        m_TargetAssemblyTypeName: ObstacleController, Assembly-CSharp
+        m_MethodName: ActivateObstacleSystem
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1465,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e3c26049339674daa09d3a63134b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onCharacterDeath: {fileID: 11400000, guid: 81f3279857b1a8040bc9c2b4dd96fed0, type: 2}
+  onCharacterDeath: {fileID: 11400000, guid: bd5d2f94d0dbf4d4cb5bf977db29f733, type: 2}
 --- !u!114 &1812838586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,17 +1577,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1812838576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e8947885924644e9b5481fb72a331b, type: 3}
+  m_Script: {fileID: 11500000, guid: 73d3f07322710304db69d0033dfd4d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 81f3279857b1a8040bc9c2b4dd96fed0, type: 2}
-  onEventTriggered:
+  gameEvent: {fileID: 11400000, guid: bd5d2f94d0dbf4d4cb5bf977db29f733, type: 2}
+  unityEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1812838581}
-        m_TargetAssemblyTypeName: UnityEngine.InputSystem.PlayerInput, Unity.InputSystem
-        m_MethodName: DeactivateInput
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1632,10 +1734,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 409840600}
+  - {fileID: 532966980}
   - {fileID: 618446513}
   - {fileID: 1797676588}
   - {fileID: 235248161}
   - {fileID: 257501640}
+  - {fileID: 1709498338}
   - {fileID: 1885896810}
   - {fileID: 519420032}
   - {fileID: 1455267252}
@@ -1643,4 +1747,3 @@ SceneRoots:
   - {fileID: 2132175238}
   - {fileID: 1812838579}
   - {fileID: 370040270}
-  - {fileID: 1709498338}

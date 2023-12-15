@@ -7,7 +7,7 @@ public class CharacterLifecycle : MonoBehaviour
 
     private Animator animator;
 
-    public GameEvent onCharacterDeath;
+    public GameEvent<int> onCharacterDeath;
 
     private void Start()
     {
@@ -28,6 +28,6 @@ public class CharacterLifecycle : MonoBehaviour
         animator.SetTrigger(DIED_ANIMATION_TRIGGER);
 
         SoundController.Instance.PlayDeathSFX();
-        onCharacterDeath.TriggerEvent();
+        onCharacterDeath?.TriggerEvent(0);
     }
 }
