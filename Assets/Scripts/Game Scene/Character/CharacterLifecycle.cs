@@ -7,7 +7,9 @@ public class CharacterLifecycle : MonoBehaviour
 
     private Animator animator;
 
-    public GameEvent onCharacterDeath;
+    private bool isAlive = true;
+
+    public GameEvent<int> onCharacterDeath;
 
     private void Start()
     {
@@ -24,10 +26,15 @@ public class CharacterLifecycle : MonoBehaviour
 
     private void CallCharacterDeath()
     {
-        // I think that's not necessary for now another script for animation, since the initial plan is to have only two
-        animator.SetTrigger(DIED_ANIMATION_TRIGGER);
+        if (isAlive == true) 
+        {
+            isAlive = false;
 
-        SoundController.Instance.PlayDeathSFX();
-        onCharacterDeath.TriggerEvent();
+            // I think that's not necessary for now another script for animation, since the initial plan is to have only two
+            animator.SetTrigger(DIED_ANIMATION_TRIGGER);
+
+            SoundController.Instance.PlayDeathSFX();
+            onCharacterDeath?.TriggerEvent(0);
+        }
     }
 }

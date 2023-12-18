@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a7f3524933a6c4a88a9b591e789000, type: 3}
-  m_Name: OnCharacterDeath
+  m_Script: {fileID: 11500000, guid: ddb089cbc7213fa4a8878f21324ab32b, type: 3}
+  m_Name: OnMatchStartedInt
   m_EditorClassIdentifier: 
