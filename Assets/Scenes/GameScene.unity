@@ -2730,6 +2730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe487ce7b9425348b711fa7bc8a36a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 1681725214}
+  highscoreMessage: {fileID: 562832677}
 --- !u!114 &1885896814
 MonoBehaviour:
   m_ObjectHideFlags: 0
