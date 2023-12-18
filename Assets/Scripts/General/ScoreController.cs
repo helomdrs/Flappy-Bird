@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public GameEvent<bool> reachedNewHighscore;
 
     Coroutine countScoreCo;
 
@@ -33,7 +33,7 @@ public class ScoreController : MonoBehaviour
             if(score > GameDataHolder.instance.GetHighscore())
             {
                 GameDataHolder.instance.SetHighscore(score);
-                Debug.Log("Got new highscore! " + score);
+                reachedNewHighscore?.TriggerEvent(true);
             }
         }   
     }

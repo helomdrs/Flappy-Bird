@@ -7,6 +7,8 @@ public class CharacterMovement : MonoBehaviour
 
     private const string FLEW_ANIMATION_TRIGGER = "Flew";
     
+    private Vector3 INITIAL_POSITION = new((float)-1.5, 1, 0);
+    
     private Rigidbody2D rb;
     private Animator animator;
 
@@ -14,6 +16,7 @@ public class CharacterMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();      
+        transform.position = INITIAL_POSITION;
     }
 
     //Callback necessary for InputSystem
